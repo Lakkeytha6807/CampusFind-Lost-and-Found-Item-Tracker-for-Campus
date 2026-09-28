@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>CampusFind</h1>
+    <p>Campus Lost & Found Item Tracker</p>
+</header>
+
+<main>
+    <section id="auth">
+        <div class="card">
+            <h2>Register</h2>
+            <input id="regName" placeholder="Name">
+            <input id="regEmail" placeholder="Email">
+            <input id="regPassword" type="password" placeholder="Password">
+            <select id="regRole">
+                <option value="STUDENT">Student</option>
+                <option value="STAFF">Staff</option>
+                <option value="ADMIN">Admin</option>
+            </select>
+            <button onclick="register()">Register</button>
+        </div>
+
+        <div class="card">
+            <h2>Login</h2>
+            <input id="loginEmail" placeholder="Email">
+            <input id="loginPassword" type="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+    </section>
+
+    <section id="app" class="hidden">
+        <div class="topbar">
+            <span id="welcome"></span>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div class="card">
+            <h2>Report Lost Item</h2>
+            <input id="lostDescription" placeholder="Description">
+            <input id="lostLocation" placeholder="Location">
+            <input id="lostDate" type="date">
+            <select id="lostCategory"></select>
+            <button onclick="reportLost()">Submit Lost Report</button>
+        </div>
+
+        <div id="staffBox" class="card hidden">
+            <h2>Report Found Item</h2>
+            <input id="foundDescription" placeholder="Description">
+            <input id="foundLocation" placeholder="Location">
+            <input id="foundDate" type="date">
+            <select id="foundCategory"></select>
+            <button onclick="reportFound()">Submit Found Item</button>
+        </div>
+
+        <div class="card">
+            <h2>Lost Reports</h2>
+            <button onclick="loadLost()">Refresh</button>
+            <div id="lostList"></div>
+        </div>
+
+        <div class="card">
+            <h2>Found Items</h2>
+            <button onclick="loadFound()">Refresh</button>
+            <div id="foundList"></div>
+        </div>
+
+        <div id="adminBox" class="card hidden">
+            <h2>Admin Dashboard</h2>
+            <button onclick="loadDashboard()">Refresh Dashboard</button>
+            <div id="dashboard"></div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

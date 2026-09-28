@@ -1,0 +1,9 @@
+package com.campusfind.repository;
+
+import com.campusfind.entity.LostReport;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface LostReportRepository extends JpaRepository<LostReport, Long> {
+    List<LostReport> findByStatus(LostReport.ReportStatus status);
+}

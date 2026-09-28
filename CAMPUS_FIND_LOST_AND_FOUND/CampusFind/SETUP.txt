@@ -1,0 +1,22 @@
+CAMPUSFIND - QUICK SETUP
+
+1. Open this folder in VS Code:
+   CampusFind
+
+2. Make sure pom.xml is directly inside this folder.
+
+3. Configure MySQL in:
+   src/main/resources/application.properties
+   Change YOUR_MYSQL_PASSWORD to your MySQL root password.
+
+4. In PowerShell, from this folder run:
+   mvn clean
+   mvn spring-boot:run
+
+If 'mvn' is not recognized, use your Maven path, for example:
+   & "D:\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin\mvn.cmd" clean
+   & "D:\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin\mvn.cmd" spring-boot:run
+
+Note: HTTP 429 from repo.maven.apache.org is a Maven Central rate-limit/network issue, not a project-code error. Wait or use another network if it occurs.
+
+Java 21 is configured in pom.xml.
